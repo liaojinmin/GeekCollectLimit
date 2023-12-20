@@ -7,12 +7,14 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 /**
@@ -37,6 +39,12 @@ public class CommandCore implements TabExecutor {
         if (args.length == 0 || !sender.hasPermission("geek.collect.admin")) return false;
 
         int length = args.length;
+
+        if (args[0].equals("test")) {
+           // ((Player) sender).getInventory().addItem(new ItemStack(Material.getMaterial(args[1].toUpperCase(Locale.ROOT))));
+            ((Player) sender).getInventory().addItem(new ItemStack(Material.valueOf(args[1].toUpperCase(Locale.ROOT))));
+            return true;
+        }
 
         if (args[0].equals(tab.get(0))) {
             GeekCollectLimit.reload();

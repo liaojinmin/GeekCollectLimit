@@ -9,7 +9,6 @@ import me.geek.collect.entity.PermConfigImpl;
 import me.geek.collect.listener.CollectListener;
 import me.geek.collect.listener.DataListener;
 import me.geek.collect.sql.SqlConfig;
-import me.geek.collect.utils.Pair;
 import me.geek.collect.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -73,6 +72,7 @@ public class GeekCollectLimit extends JavaPlugin {
     public static DataManger getDataManger() {
         return dataManger;
     }
+
 
     @Nullable
     public static PlayerData getPlayerData(UUID uuid) {
